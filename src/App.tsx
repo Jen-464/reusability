@@ -7,13 +7,13 @@ function App() {
 
   return (
     <>
-      <CustomButton ref={btnRef} color="salmon" onClick={() => alert("Clicked on Salmon!")}>
+      <CustomButton ref={btnRef} color="light" icon="facebook">
         Click me
       </CustomButton>
-      <CustomButton ref={btnRef} color="green" onClick={() => alert("Clicked on Green!")}>
-        Click me
+      <CustomButton ref={btnRef}>
+        Don't click on me
       </CustomButton>
-      <CustomButton ref={btnRef} onClick={() => alert("Found me!")}>
+      <CustomButton ref={btnRef} color="dark" icon="linkedin">
         Click me
       </CustomButton>
     </>
