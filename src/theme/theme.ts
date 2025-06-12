@@ -10,6 +10,9 @@ const theme = createTheme({
       contrastText: "#FFF",
     },
   },
+  shape: {
+    borderRadius: 8
+  }
 });
 
 export default theme;

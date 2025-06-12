@@ -10,10 +10,12 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     color?: "main" | "light" | "dark"; // ? - optional
     icon?: "facebook" | "linkedin" | "instagram";
+    size?: "small" | "medium" | "large";
+    rounded?: boolean;
 };
 
 export const CustomButton = forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ color, icon, children, ...otherProps }, ref) => {
+    ({ color, icon, rounded, children, ...otherProps }, ref) => {
         const theme: Theme = useTheme();
         const bgColor =
             color === "dark" ? theme.palette.primary.dark :
@@ -26,6 +28,8 @@ export const CustomButton = forwardRef<HTMLButtonElement, ButtonProps>(
                     icon === "linkedin" ? LinkedInIcon :
                         null;
 
+        const isRounded = rounded === false ? 0 : 1;
+
         return (
             <Button
                 ref={ref}
@@ -36,6 +40,7 @@ export const CustomButton = forwardRef<HTMLButtonElement, ButtonProps>(
                     display: "flex",
                     gap: "8px",
                 }}
+                sx={{ borderRadius: isRounded}}
                 onClick={() => alert(`Clicked on ${color} blue`)}
                 {...otherProps}>
                 {IconComponent && <IconComponent />}
