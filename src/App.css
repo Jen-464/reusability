@@ -1,6 +1,11 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* :root {
+  --color-main: oklch(78.9% 0.154 211.53);
+  --color-light: oklch(86.5% 0.127 207.078);
+  --color-dark: oklch(71.5% 0.143 215.221);
+} */
