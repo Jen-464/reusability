@@ -1,7 +1,3 @@
-// import { forwardRef } from "react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-
 // inheriting default button prop && custom props
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     color?: "main" | "light" | "dark"; // ? - optional
