@@ -2,20 +2,20 @@ import { useState } from "react";
 
 type SearchProps = {
     onSearchResults: (data: any) => void;
-  };
+};
 
-export function Search({onSearchResults}: SearchProps) {
+export function Search({ onSearchResults }: SearchProps) {
     const [city, setCity] = useState("");
 
     async function fetchData(query: string) {
 
         const url = 'https://travel-advisor.p.rapidapi.com/locations/v2/search?currency=USD&units=km&lang=en_US';
-
+        
         try {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'x-rapidapi-key': '5d1b13838emsh7dc20092a43e100p1da1c7jsnd6057f786dd5',
+                    'x-rapidapi-key': import.meta.env.VITE_APP_RAPID_API_TRAVEL_API_KEY || "",
                     'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
                     'Content-Type': 'application/json'
                 },
@@ -31,7 +31,7 @@ export function Search({onSearchResults}: SearchProps) {
         }
     }
 
-    function handleSubmit (e: React.FormEvent) {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         if (city.trim().length > 0) {
             fetchData(city.trim());

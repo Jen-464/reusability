@@ -10,10 +10,14 @@ function App() {
   const [location, setLocation] = useState("");
   const [geoId, setGeoId] = useState("");
 
+
+
   const handleResult = (data: any) => {
     const cityInfo = data["data"]["AppPresentation_queryAppSearch"]["sections"][1]["appSearchCardContent"];
-    setLocation(cityInfo["primaryInfo"]["text"]);
-    setGeoId(cityInfo["saveId"]["id"])
+    if(cityInfo) {
+      setLocation(cityInfo["primaryInfo"]["text"]);
+      setGeoId(cityInfo["saveId"]["id"]);
+    }
   }
 
   return (

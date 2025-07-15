@@ -8,5 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  define: {
+    "process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY": JSON.stringify(process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY)
+  },
   base: "/reusability"
 })
