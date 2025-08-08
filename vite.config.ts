@@ -11,5 +11,10 @@ export default defineConfig({
   define: {
     "process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY": JSON.stringify(process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY)
   },
-  base: "/reusability"
+  base: "/reusability",
+  server: {
+    proxy: {
+      '/create-event': 'http://localhost:8000',
+    },
+  },
 })

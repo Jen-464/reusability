@@ -1,16 +1,15 @@
 /* import { CustomButton } from "./components/Button/Button";
 import { CustomIcon } from "./components/Button/Icons";
 import { faFish, faOtter, faDragon } from '@fortawesome/free-solid-svg-icons'; */
-import { Search } from "./components/Travel/Search";
-import { Hotel } from "./components/Travel/Hotel";
+/* import { Search } from "./components/Travel/Search";
+import { Hotel } from "./components/Travel/Hotel";*/
+import { EventForm } from './components/Events/EventForm';
 import './App.css'
-import { useState } from "react";
 
 function App() {
+  /*
   const [location, setLocation] = useState("");
   const [geoId, setGeoId] = useState("");
-
-
 
   const handleResult = (data: any) => {
     const cityInfo = data["data"]["AppPresentation_queryAppSearch"]["sections"][1]["appSearchCardContent"];
@@ -18,11 +17,12 @@ function App() {
       setLocation(cityInfo["primaryInfo"]["text"]);
       setGeoId(cityInfo["saveId"]["id"]);
     }
-  }
+  } */
 
   return (
     <main>
-      <Search onSearchResults={handleResult} />
+      <EventForm/>
+      {/* <Search onSearchResults={handleResult} />
       {
         location ? (
           <>
@@ -32,7 +32,7 @@ function App() {
         ) : (
           <p>No location yet.</p>
         )
-      }
+      }  */}
       {/* 
       <CustomButton rounded />
       <CustomButton label="main button" rounded></CustomButton>
